@@ -9,7 +9,7 @@ function Bubbles(container, self, options) {
   recallInteractions = options.recallInteractions || 0 // number of interactions to be remembered and brought back upon restart
   inputCallbackFn = options.inputCallbackFn || false // should we display an input field?
 
-  var standingAnswer = "ice" // remember where to restart convo if interrupted
+  var standingAnswer = "start" // remember where to restart convo if interrupted
 
   var _convo = {} // local memory for conversation JSON object
   //--> NOTE that this object is only assigned once, per session and does not change for this
@@ -135,7 +135,7 @@ function Bubbles(container, self, options) {
   var iceBreaker = false // this variable holds answer to whether this is the initative bot interaction or not
   this.reply = function(turn) {
     iceBreaker = typeof turn === "undefined"
-    turn = !iceBreaker ? turn : _convo.ice
+    turn = !iceBreaker ? turn : _convo.start
     questionsHTML = ""
     if (!turn) return
     if (turn.reply !== undefined) {

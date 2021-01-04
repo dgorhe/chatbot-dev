@@ -1,0 +1,29 @@
+<script type="text/json" src="./flow.json"></script>
+<head>
+    <meta charset="UTF-8">
+	<title>Keyboard Input for chat-bubble</title>
+
+	<!-- for mobile screens -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+        function loadJSON() {
+            fetch("./flow.json")
+            .then(
+                function(response) {
+                    return response.json();
+                }
+            )
+            .then(
+                function(data) {
+                    console.log(data)
+                }
+            )
+        }
+        
+        loadJSON();
+
+    </script>    
+</body>

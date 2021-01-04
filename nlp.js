@@ -20,25 +20,23 @@ This should only be used for initial topic or if bot prompts for rephrasing     
 // Simple function to find the topic of conversation
 let findTopic = function(text, topics) {
     text = text.trim().split(" ").map(word => word.toLowerCase());
-    
-    let subject;
 
     for (let [topic, variants] of Object.entries(topics)) {
         if (!Array.isArray(variants[0])) {
             if (text.includes(...variants)) {
-                return subject = topic;
+                return topic;
             }
         } 
         else {
             for (let variant of variants) {
                 if (text.includes(...variant)) {
-                    return subject = topic;
+                    return topic;
                 }
             }
 
-        return subject = "topic-not-found";
+        return "topic-not-found";
         }
     }
 
-    return subject = "something went wrong";
+    return "something went wrong";
 }
