@@ -76,12 +76,23 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
 
     // search function
     var found = false
-    o.convo[o.standingAnswer].reply.forEach(function(e, i) {
-      strip(e.question).includes(strip(o.input)) && o.input.length > 0
-        ? (found = e.answer)
-        : found ? null : (found = false)
-    })
-    found ? match(found) : miss()
+
+    o.convo[o.standingAnswer].reply.forEach(
+      function(e, i) {
+        if (strip(e.question).includes(strip(o.input)) &&  o.input.length > 0) {
+          return found = e.answer;
+        } else if (found) {
+          return null;
+        } else {
+          return found = false;
+        }
+      })
+
+    if (found) {
+      return match(found);
+    } else {
+      miss();
+    }
   }
 }) // done setting up chat-bubble
 
