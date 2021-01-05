@@ -19,4 +19,4 @@
 
 
 ## Screenshots
-![Starting Out](./screenshots/new-miles-basic.png?raw=true)
+![Starting Out](./screenshots/new-miles-basic.PNG)
