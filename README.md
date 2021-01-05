@@ -14,8 +14,8 @@
 - Change color scheme to match original Miles
 
 ## Libraries
-- [SymSpellPy]("https://github.com/mammothb/symspellpy")
-- [Chat-bubbles]("https://github.com/dmitrizzle/chat-bubble")
+- [SymSpellPy](https://github.com/mammothb/symspellpy)
+- [Chat-bubbles](https://github.com/dmitrizzle/chat-bubble)
 
 
 ## Screenshots
