@@ -160,7 +160,7 @@ var flow = {
     ]
   },
 
-  /* Driver License/Identification Card */
+  /* Driver License/Identification (ID) Card */
   "dl-identification-card": {
     says: ["Please select one of the options below or type a driver license/ID card related question to get started."],
     reply: [
@@ -178,7 +178,7 @@ var flow = {
       },
       {
         question: "Prepare for Your Office Visit",
-        answer: "prepare-office-visit"
+        answer: "prepare-for-office-visit"
       },
       {
         question: "Back",
@@ -205,7 +205,7 @@ var flow = {
       },
       {
         question: "Prepare for Your Office Visit",
-        answer: "prepare-office-visit"
+        answer: "prepare-for-office-visit"
       },
       {
         question: "Back",
@@ -311,7 +311,7 @@ var flow = {
       },
       {
         question: "Prepare for Your Office Visit",
-        answer: "prepare-office-visit"
+        answer: "prepare-for-office-visit"
       },
       {
         question: "Back",
@@ -507,9 +507,474 @@ var flow = {
            "View the REAL ID Document List below for more documents."],
     reply: [
       {
-        question: "",
-        answer: ""
+        question: "REAL ID Document List (PDF)",
+        answer: "<add hyperlink>"
       },
+      {
+        question: "Interactive Document Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Name changes",
+        answer: "name-changes"
+      },
+      {
+        question: "Back",
+        answer: "real-id-documents"
+      },
+    ]
+  },
+  
+  /* Name changes */
+  "name-changes": {
+    says: ["If the name on your identity document and proof of social security number is different than your current name, you must bring a document with the new name.", 
+           "Multiple name change documents are needed if your name has changed multiple times."],
+    reply: [
+      {
+        question: "REAL ID Document List (PDF)",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Interactive Document Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "real-id-documents"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Electronic Driver License/ID Card Application */
+  "electronic-dl-application": {
+    says: ["You can complete the electronic driver license/ID card application online or in the office.", 
+           "If you complete the form online, you must create an ID.me account."],
+    reply: [
+      {
+        question: "Electronic Driver License/ID Card Application",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+  /* Change of Address Status */
+  "change-of-address-status": {
+    says: ["If you changed your address online, you can view the status after 72 hours."],
+    reply: [
+      {
+        question: "Change Address Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "change-of-status"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+  
+  /* Prepare for your Office Visit */
+  "prepare-for-office-visit": {
+    says: ["You can use DMV's checklists when preparing for your office visit."],
+    reply: [
+      {
+        question: "Driver License/ID Card Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Vehicle Registration Checklists",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointments",
+        answer: "appointments"
+      },
+      {
+        question: "Fees",
+        answer: "fees"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Fees */
+  "fees": {
+    says: ["Fees are available on the DMV Website.", 
+           "Please select one of the options below to view DMV fees."],
+    reply: [
+      {
+        question: "Driver License Fees",
+        answer: "driver-license-fees"
+      },
+      {
+        question: "Vehicle Registration Fees",
+        answer: "vehicle-registration-fees"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Residency */
+  "residency": {
+    says: ["You must bring 2 residency documents to apply for a REAL ID.", 
+           "There are many documents you can use as proof of residency, as long as they match the name and address used in your application.", 
+           "View the REAL ID Document List below for more documents."],
+    reply: [
+      {
+        question: "REAL ID Document Checklist (PDF)",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Interactive Document Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "real-id-documents"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Reissue Fees */
+  "reissue-fees": {
+    says: ["Reissue fees to reinstate a suspended or revoked driving privilege cannot be paid online.", 
+           "To pay this fee, please visit a DMV office or pay by mail."],
+    reply: [
+      {
+        question: "Reissue fees",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointments",
+        answer: "appointments"
+      },
+      {
+        question: "Back",
+        answer: "real-id-documents"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Minors */
+  "minors": {
+    says: ["Minors must be at least 15 1/2, but under 18 years to apply for a provisional instruction permit.", 
+           "You can use the Minor Checklist to prepare for your DMV visit."],
+    reply: [
+      {
+        question: "Minor Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Lost or Damaged Permit",
+        answer: "lost-or-damaged-permits"
+      },
+      {
+        question: "Minor Drive Test Appointments",
+        answer: "minor-drive-test-appointments"
+      },
+      {
+        question: "Minor Test Retake",
+        answer: "minor-test-retake"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Minor Drive Test Appointments */
+  "minor-drive-test-appointments": {
+    says: ["Minors must have an instruction permit for at least 6 months to be eligible for a drive test.", 
+           "The appointment system checks eligibility based on the office's first available appointment date."],
+    reply: [
+      {
+        question: "Prepare for your Drive Test",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Minor Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointment System",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "minors"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Vehicle Registration Renewal */
+  "vehicle-registration-renewal": {
+    says: ["Renewal notices are mailed to the current address on record 75 days prior to the expiration date.", 
+           "Your renewal notice will state if you're eligible to renew online, by mail, or if you must visit an office."],
+    reply: [
+      {
+        question: "Vehicle Registration FAQs",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Renew Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Lost/Missing Renewal Notice",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Vehicle Registration Status",
+        answer: "vehicle-registration-status"
+      },
+      {
+        question: "Vehicle Registration Fees",
+        answer: "vehicle-registration-fees"
+      },
+      {
+        question: "Back",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+  /* Lost/Damaged Permit */
+  "lost-damaged-permit": {
+    says: ["You must visit a DMV office to obtain a replacement.", 
+           "The expiration date will remain the same."],
+    reply: [
+      {
+        question: "Minor Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointment System",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "lost-stolen-dl"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Social Security */
+  "social-security": {
+    says: ["You must bring 1 proof of Social Security Number to apply for a REAL ID.", 
+           "It must have your full Social Security Number and cannot be a photocopy.", 
+           "Examples include a social security card or W-2 form.", 
+           "View the REAL ID Document List below for more documents."],
+    reply: [
+      {
+        question: "REAL ID Document List (PDF)",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Interactive Document Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Name changes",
+        answer: "name-changes"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Driver License/ID Card Status */
+  "dl-status": {
+    says: ["If you haven't received your driver license or identification card, please see the current processing times."],
+    reply: [
+      {
+        question: "Current Processing Times",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+  /* Minor Test Retake */
+  "minor-test-retake": {
+    says: ["If a minor fails the knowledge test, they must wait 7 days, not including the day the test was failed, to retake the test.", 
+           "If they fail the behind-the-wheel drive test, they must wait 14 days, not including the day they failed, to retake the test."],
+    reply: [
+      {
+        question: "Minor Checklist",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "minors"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Replacement Registration Items */
+  "replacement-registration-items": {
+    says: ["Replacement stickers and registration cards are available online or by mail.", 
+           "You can request a duplicate title in person or by mail."],
+    reply: [
+      {
+        question: "Replacement Sticker/Registration Card Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Duplicate Title by Mail",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "vehicle-registration"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Appointments */
+  "appointments": {
+    says: ["DMV offices are open to assist customers with existing appointments and with transactions that require an in-person visit.", 
+           "New appointments are currently unavailable."],
+    reply: [
+      {
+        question: "Field Office Openings Information",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointment System",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Office Locations",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Minors",
+        answer: "minors"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Driver License Fees */
+  "dl-fees": {
+    says: ["Driver license/ID card fees are available on the DMV Website.", 
+           "When you apply for a REAL ID, it is the same price as a renewal, duplicate, or original driver license/ID card.", 
+           "It does not cost extra to apply for a REAL ID."],
+    reply: [
+      {
+        question: "Driver License/ID Card Fees",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Back",
+        answer: "dl-identification"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Tests */
+  "tests": {
+    says: ["Knowledge tests are required for various reasons, including first time applications, adding an endorsement, and upgrading your license class.", 
+           "Practice tests are available online.", 
+           "Behind-the-wheel drive tests require an appointment."],
+    reply: [
+      {
+        question: "Practice Knowledge Tests",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Prepare for your Drive Test",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Appointments",
+        answer: "appointments"
+      },
+      {
+        question: "Minors",
+        answer: "minors"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Vehicle Registration Status */
+  "vehicle-registration-status": {
+    says: ["If you have not received your license plates, sticker and/or registration card within 8 weeks of submitting an application, please call 1-800-777-0133 to verify issuance."],
+    reply: [
       {
         question: "",
         answer: ""
@@ -524,6 +989,7 @@ var flow = {
       },
     ]
   },
+
 
   /* Template
   "": {
