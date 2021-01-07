@@ -976,20 +976,43 @@ var flow = {
     says: ["If you have not received your license plates, sticker and/or registration card within 8 weeks of submitting an application, please call 1-800-777-0133 to verify issuance."],
     reply: [
       {
-        question: "",
-        answer: ""
+        question: "Vehicle Registration FAQs",
+        answer: "<add hyperlink>"
       },
       {
-        question: "",
-        answer: ""
+        question: "Replacement Registration Items",
+        answer: "replacement-registration-items"
       },
       {
-        question: "",
-        answer: ""
+        question: "Back",
+        answer: "vehicle-registration"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
       },
     ]
   },
 
+  /* Traffic School */
+  "traffic-school": {
+    says: ["DMV has an online service to help you find a traffic school. The list is only an informational tool.", 
+           "You cannot register or attend traffic school on the DMV Website."],
+    reply: [
+      {
+        question: "Find a Traffic School",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+    ]
+  },
 
   /* Template
   "": {
