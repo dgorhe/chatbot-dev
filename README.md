@@ -1,7 +1,7 @@
 # New and Improved Miles Chatbot 
 
 ## Demo
-[Public Link on AWS](http://chatbot-dev-dgorhe.s3-website-us-west-1.amazonaws.com/)
+[Public Link on AWS](http://chatbot-dev-dgorhe.s3-website-us-west-1.amazonaws.com/){:target="_blank"}
 
 ## To-do List
 - Complete flow.js with all questions from original Miles
