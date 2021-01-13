@@ -37,6 +37,7 @@
 <!-- import the JSON file -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="./flow.js"></script>
+<script type="text/javascript" src="./nlp.js"></script>
 
 
 <script>
@@ -75,24 +76,27 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
     }
 
     // search function
-    var found = false
+    // var found = false;
 
-    o.convo[o.standingAnswer].reply.forEach(
-      function(e, i) {
-        if (strip(e.question).includes(strip(o.input)) &&  o.input.length > 0) {
-          return found = e.answer;
-        } else if (found) {
-          return null;
-        } else {
-          return found = false;
-        }
-      })
+    // o.convo[o.standingAnswer].reply.forEach(
+    //   function(e, i) {
+    //     if (strip(e.question).includes(strip(o.input)) &&  o.input.length > 0) {
+    //       return found = e.answer;
+    //     } else if (found) {
+    //       return null;
+    //     } else {
+    //       return found = false;
+    //     }
+    //   })
 
-    if (found) {
-      return match(found);
-    } else {
-      miss();
-    }
+    // if (found) {
+    //   return match(found);
+    // } else {
+    //   miss();
+    // }
+
+    console.log(o);
+
     
   } // end of inputCallbackFn
 
