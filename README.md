@@ -6,8 +6,11 @@
 ## To-do List
 - Complete flow.js with all questions from original Miles
 - Add hyperlinks for appropriate buttons
-- Add remaining topics to nlp.js
-- Connect nlp.js to index.html and add basic NLP
+- Add topics to nlp.js
+    - Dynamically generate topics object
+    - 
+- ~~Connect nlp.js to index.html~~ 
+- ~~add basic NLP~~
 - Add survey functionality
     - ability to change survey frequency
     - Saving survey responses
