@@ -95,7 +95,16 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
     //   miss();
     // }
 
-    console.log(o);
+
+    // Dynamically generating non-nested topics
+    var topics = {};
+    for (var [key, value] of Object.entries(flow)) {
+      topics[key] = key.trim().split("-").map(word => word.toLowerCase());
+    }
+
+    var topic = findShallowTopic(o.input, topics);
+    console.log(topic);
+    match(topic);
 
     
   } // end of inputCallbackFn
