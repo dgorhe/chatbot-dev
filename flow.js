@@ -1014,6 +1014,138 @@ var flow = {
     ]
   },
 
+  /* Vehicle Registration Fees */
+  "vehicle-registration-fees": {
+    says: ["Vehicle registration fees are available on the DMV Website."],
+    reply: [
+      {
+        question: "Vehicle Registration Items",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Replacement Registration Items",
+        answer: "replacement-registration-items"
+      },
+      {
+        question: "Back",
+        answer: "fees"
+      },
+      {
+        question: "Back to Start",
+        answer: "start"
+      },
+    ]
+  },
+
+  /* Notice of Transfer and Release of Liability */
+  "notice-of-transfer-and-release-of-liability": {
+    says: ["If you sell or transfer your vehicle to another party, you must submit a Notice of Transfer and Release of Liability form within 5 calendar days from the date you sell or transfer the title to another owner.", 
+           "Please keep a copy for your records."],
+    reply: [
+      {
+        question: "Notice of Transfer and Release of Liability Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Notice of Transfer and Release of Liability by Mail",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+  /* Disabled Person Placard/Plate */
+  "disabled-person-placard-plate": {
+    says: ["Information about Disabled Person (DP) Placards and License Plates can be found on the DMV Website.", 
+           "A DP placard or license plate address change must be done by mail."],
+    reply: [
+      {
+        question: "Disabled Person Parking Placards and License Plates Brochure",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Change Address by Mail",
+        answer: "change-address-by-mail"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+  /* Personalized License Plates */
+  "personalized-license-plates": {
+    says: ["Special interest/personalized license plates are available for pick up 8-12 weeks after being ordered.", 
+           "You will be notified by mail when they are ready for pick up."],
+    reply: [
+      {
+        question: "Order Personalized Plates Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "Order Personalized Plates by Mail",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+
+  /* Planned Non-Operation */
+  "planned-non-operation": {
+    says: ["A vehicle can be placed on Planned Non-Operation (PNO) during the renewal period (75 days before and 90 days after the registration expiration date)."],
+    reply: [
+      {
+        question: "File PNO Online",
+        answer: "<add hyperlink>"
+      },
+      {
+        question: "REAL ID",
+        answer: "real-id-start"
+      },
+      {
+        question: "Driver License/Identification (ID) Card",
+        answer: "dl-identification-card"
+      },
+      {
+        question: "Vehicle Registration",
+        answer: "vehicle-registration"
+      },
+    ]
+  },
+
+
   /* Template
   "": {
     says: [],
