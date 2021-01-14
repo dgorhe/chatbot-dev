@@ -4,11 +4,11 @@
 [Public Link on AWS](http://chatbot-dev-dgorhe.s3-website-us-west-1.amazonaws.com/)
 
 ## To-do List
-- Complete flow.js with all questions from original Miles
+- ~~Complete flow.js with all questions from original Miles~~
 - Add hyperlinks for appropriate buttons
 - Add topics to nlp.js
     - Dynamically generate topics object
-    - 
+    - Manually create topics object
 - ~~Connect nlp.js to index.html~~ 
 - ~~add basic NLP~~
 - Add survey functionality
@@ -18,6 +18,7 @@
 - Add "live chat" and "translate" buttons for UI
 - Implement machine translation through SDLC
 - Change color scheme to match original Miles
+- Add gifs to README
 
 ## Libraries
 - [SymSpellPy](https://github.com/mammothb/symspellpy)
