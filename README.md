@@ -19,6 +19,8 @@
 - Implement machine translation through SDLC
 - Change color scheme to match original Miles
 - Add gifs to README
+- Implement webservice with SymSpellPy
+- Migrate Miles to Amazon EC2 instance
 
 ## Libraries
 - [SymSpellPy](https://github.com/mammothb/symspellpy)
