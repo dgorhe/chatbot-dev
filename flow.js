@@ -9,7 +9,6 @@ Notes
 */
 
 
-
 var flow = {
   
   /* Main Menu */
@@ -29,6 +28,18 @@ var flow = {
       {
         question: "Driver License/Identification (ID) Card",
         answer: "dl-id-card"
+      }
+    ]
+  },
+
+  /* Online Services */
+  // link
+  "online-services": {
+    says: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://stackoverflow.com/questions/18128504/adding-hyperlink-to-text-in-jquery>This is a test</a>"],
+    reply: [
+      {
+        question: "Start",
+        answer: "start"
       }
     ]
   },
@@ -1144,26 +1155,5 @@ var flow = {
       },
     ]
   },
-
-
-  /* Template
-  "": {
-    says: [],
-    reply: [
-      {
-        question: "",
-        answer: ""
-      },
-      {
-        question: "",
-        answer: ""
-      },
-      {
-        question: "",
-        answer: ""
-      },
-    ]
-  },
-  */
 
 } // end of conversation object
