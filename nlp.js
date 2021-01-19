@@ -1,12 +1,107 @@
-// topics = {
-//     "real-id-start": ["real", "id"],
-//     "registration": ["registration"],
-//     "dl-identification-card": [
-//         ["driver", "license"], 
-//         ["drivers", "license"], 
-//         ["driver's", "license"]
-//     ],
-// }
+topics = {
+    "real-id-start": ["real", "id"],
+    "registration": ["registration"],
+    "do-cards-look-different": [
+        ["cards", "look", "same"],
+        ["look", "same"]
+    ],
+    "federal-limits-apply": [
+        ["federal", "id"],
+        ["federal", "identification"]
+    ],
+    "firearms-and-ammunition": [
+        ["firearms"],
+        ["guns"],
+        ["ammo"],
+        ["ammunition"]
+    ],
+    "dl-identification-card": [
+        ["driver", "license"], 
+        ["drivers", "license"], 
+        ["driver's", "license"]
+    ],
+    "apply-for-real-id": [
+        ["apply", "for", "real", "id"],
+        ["real", "id", "application"]
+        ["real", "id", "app"]
+    ],
+    "why-real-id": [
+        ["why", "is", "it", "called", "a", "real", "id"],
+        ["why", "is", "it", "called", "real", "id"]
+    ],
+    "real-id-one-card": [
+        []
+    ],
+    "domestic-flight": [
+        ["what", "counts", "as", "domestic"],
+        ["domestic", "flight"],
+    ],
+    "change-of-address": [
+        ["change", "address"],
+        ["change", "my", "address"],
+        ["address", "change"]
+    ],
+    "vehicle-registration": [
+        ["car", "registration"],
+        ["reregister"],
+        ["renew", "registration"],
+        ["registration", "renewal"]
+    ],
+    "dl-renewal": [
+        ["license", "renewal"],
+        ["renew", "license"],
+    ],
+    "accepted-flight-identification": [
+        ["use", "on", "flight"],
+        ["work", "on", "flight"],
+        ["work", "for", "flight"],
+        ["flight", "id"]
+    ],
+    "do-i-need-a-real-id": [
+        []
+    ],
+    "secure-federal-facilities": [
+        ["secure", "federal", "facilities"],
+    ],
+    "request-records": [
+        ["driver", "record"],
+        ["driver", "records"]
+        ["vehicle", "record"]
+        ["vehicle", "records"]
+    ],
+    "new-card": [
+        ["new", "card", "when", "my", "address", "changes"]
+    ],
+    "lost-stolen-card": [
+        ["new", "license"],
+        ["new", "driver", "license"],
+        ["new", "drivers", "license"],
+        ["new", "driver's", "license"],
+        ["stolen", "license"],
+        ["stolen", "id"]
+        ["stolen", "card"],
+        ["damaged", "license"],
+        ["damaged", "id"],
+        ["damaged", "card"]
+        ["broken"]
+    ],
+    "name-changes": [
+        ["changing", "name"],
+        ["changing", "names"],
+        ["altering", "name"],
+        ["name", "change"]
+    ],
+    "electronic-dl-application": [
+        ["online", "id", "application"],
+        ["electronic", "id", "application"],
+        ["online", "license", "application"],
+        ["electronic", "license", "application"],
+    ],
+    "change-of-address": [
+        ["change", "of", "address", "status"],
+        [""]
+    ]
+}
 
 if (Array.prototype.equals) {
     console.warn("You're overriding the existing Array.prototype.equals");
