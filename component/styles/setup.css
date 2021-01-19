@@ -1,7 +1,8 @@
 /* setup container styles */
 .bubble-container {
+	border: 2px solid red;
 	background: #dcdde0;
-	height: 520px;
+	height: 80vh;
 	max-width: 750px;
 	width: 100%;
 	margin: 0 auto;
@@ -9,12 +10,12 @@
 	position: relative;
 }
 .bubble-wrap {
+	border: 2px solid black;
 	position: absolute;
 	top: 0;
-	bottom: 0;
+	bottom: 0em;
 	left: 0;
 	right: -17px;
-	padding: 10px calc(17px + 10px) 30px 10px;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	-webkit-transform: translate3d(0, 0, 0);
@@ -30,3 +31,28 @@ body {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	margin: 0;
 }
+
+
+/* padding: 10px calc(17px + 10px) 30px 10px; */
+/* 
+    .bubble-container {
+        border: 2px solid red;
+        position: relative;
+        height: 90vh;
+        width: 80vw;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+    }
+
+    .bubble-wrap {
+        border: 1px solid blue;
+        height: 80vh
+    }
+
+    .input-wrap {
+        border: 1px solid black;
+        height: 10vh;
+    }
+*/
