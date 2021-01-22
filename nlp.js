@@ -99,8 +99,62 @@ topics = {
     ],
     "change-of-address": [
         ["change", "of", "address", "status"],
-        [""]
-    ]
+        ["address", "status"]
+    ],
+    "prepare-for-office-visit":[
+        ["office", "visit"]
+    ],
+    "fees":[
+        ["fees"]
+    ],
+    "residency":[
+        ["documents", "for", "real", "id"],
+        ["docs", "for", "real", "id"]
+    ],
+    "reissue-fee":[
+        ["reissue", "fee"]
+    ],
+    "minors":[
+        ["requirements", "for", "minors"]
+    ],
+    "minor-drive-test-appointments":[
+        ["drive", "test"],
+        ["driving", "test"]
+    ],
+    "vehicle-registration-renewal":[
+        ["registration", "renewal"],
+        ["renewing", "registration"],
+        ["registration"]
+    ],
+    "lost-damaged-permit":[
+        ["lost", "permit"],
+        ["lost", "my", "permit"],
+        ["lost", "a", "permit"],
+        ["damaged", "permit"],
+        ["damaged", "my", "permit"],
+        ["damaged", "a", "permit"],
+    ],
+    "social-security":[
+        ["ssn"],
+        ["social", "security"],
+    ],
+    "dl-status":[
+    "dl-status":[
+    "dl-status":[
+    "dl-status":[
+    "dl-status":[
+    "dl-status":[
+        ["driver", "license", "status"],
+        ["driver's", "license", "status"],
+        ["drivers", "license", "status"],
+        ["status", "of", "driver", "license"],
+        ["status", "of", "driver's", "license"],
+        ["status", "of", "drivers", "license"],
+        ["status", "of", "my", "driver", "license"],
+        ["status", "of", "my", "driver's", "license"],
+        ["status", "of", "my", "drivers", "license"],
+    ],
+
 }
 
 if (Array.prototype.equals) {

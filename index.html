@@ -75,27 +75,6 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
       return text.toLowerCase().replace(/[\s.,\/#!$%\^&\*;:{}=\-_'"`~()]/g, "")
     }
 
-    // search function
-    // var found = false;
-
-    // o.convo[o.standingAnswer].reply.forEach(
-    //   function(e, i) {
-    //     if (strip(e.question).includes(strip(o.input)) &&  o.input.length > 0) {
-    //       return found = e.answer;
-    //     } else if (found) {
-    //       return null;
-    //     } else {
-    //       return found = false;
-    //     }
-    //   })
-
-    // if (found) {
-    //   return match(found);
-    // } else {
-    //   miss();
-    // }
-
-
     // Dynamically generating non-nested topics
     var topics = {};
     for (var [key, value] of Object.entries(flow)) {
@@ -103,10 +82,8 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
     }
 
     var topic = findShallowTopic(o.input, topics);
-    console.log(topic);
     match(topic);
 
-    
   } // end of inputCallbackFn
 
 }) // done setting up chat-bubble
