@@ -161,6 +161,13 @@ if (Array.prototype.equals) {
     console.warn("You're overriding the existing Array.prototype.equals");
 }
 
+
+/** Find the topic of that the initial message relates to. 
+ * This should only be used for initial topic or if bot prompts for rephrasing
+ * @param {array} array - The array to compare to
+ * 
+ * @return {boolean} anonymous - whether or not the @code{array} input is equal to the array to which it is being compared
+ */
 Array.prototype.equals = function(array) {
     // Comparison item is not an array
     if (!array) {
@@ -193,7 +200,6 @@ Array.prototype.equals = function(array) {
  * 
  * @return {string} subject - The topic of the user's chat message
  */
-// Simple function to find the topic of conversation
 let findNestedTopic = function(text, topics) {
     text = text.trim().split(" ").map(word => word.toLowerCase());
 
