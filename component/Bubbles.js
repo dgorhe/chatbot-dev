@@ -2,12 +2,12 @@
 function Bubbles(container, self, options) {
   // options
   options = typeof options !== "undefined" ? options : {}
-  animationTime = options.animationTime || 200 // how long it takes to animate chat bubble, also set in CSS
-  typeSpeed = options.typeSpeed || 5 // delay per character, to simulate the machine "typing"
-  widerBy = options.widerBy || 2 // add a little extra width to bubbles to make sure they don't break
-  sidePadding = options.sidePadding || 6 // padding on both sides of chat bubbles
-  recallInteractions = options.recallInteractions || 0 // number of interactions to be remembered and brought back upon restart
-  inputCallbackFn = options.inputCallbackFn || false // should we display an input field?
+  animationTime = options.animationTime || 200            // how long it takes to animate chat bubble, also set in CSS
+  typeSpeed = options.typeSpeed || 5                      // delay per character, to simulate the machine "typing"
+  widerBy = options.widerBy || 2                          // add a little extra width to bubbles to make sure they don't break
+  sidePadding = options.sidePadding || 6                  // padding on both sides of chat bubbles
+  recallInteractions = options.recallInteractions || 0    // number of interactions to be remembered and brought back upon restart
+  inputCallbackFn = options.inputCallbackFn || false      // should we display an input field?
 
   var standingAnswer = "start" // remember where to restart convo if interrupted
 
@@ -74,11 +74,57 @@ function Bubbles(container, self, options) {
 
   // install user input textfield
   this.typeInput = function(callbackFn) {
-    var inputWrap = document.createElement("div")
-    inputWrap.className = "input-wrap"
-    var inputText = document.createElement("textarea")
-    inputText.setAttribute("placeholder", "Ask me anything...")
-    inputWrap.appendChild(inputText)
+    // divs to hold textarea and buttons
+    var inputWrap = document.createElement("div");
+    inputWrap.className = "input-wrap";
+
+    var textInput =  document.createElement("div");
+    var translateDiv = document.createElement("div");
+    var liveChatDiv = document.createElement("div");
+    
+    // instantiating textarea and buttons
+    var translateButton = document.createElement("button");
+    var liveChatButton = document.createElement("button");
+    var inputText = document.createElement("textarea");
+
+    
+    liveChatDiv.appendChild(liveChatButton);
+    textInput.appendChild(inputText);
+    
+    inputText.setAttribute("placeholder", "Ask me anything...");
+    liveChatDiv.setAttribute("class", "live-chat-button");
+    translateDiv.setAttribute("class", "translate-div");
+    textInput.setAttribute("class", "text-input");
+    liveChatButton.innerHTML = "Live Chat";
+    translateButton.innerHTML = "Translate";
+    translateButton.setAttribute("class", "translate-button");
+
+    var translateDropdown = document.createElement("div");
+    translateDropdown.setAttribute("class", "translate-dropdown");
+    num_items = 5;
+    for (i=0; i<num_items; i++) {
+      var child = document.createElement("a");
+      child.innerHTML = "Item #" + i;
+      child.setAttribute("href", "#");
+      translateDropdown.appendChild(child);
+    }
+    inputWrap.appendChild(translateDropdown);
+    translateDiv.appendChild(translateButton);
+
+    var emptyDiv = document.createElement("div");
+    emptyDiv.setAttribute("class", "empty-div");
+    inputWrap.appendChild(emptyDiv);
+
+    let alternator = 1;
+    translateButton.addEventListener("click", function() {
+      let dropdownMenu = document.getElementsByClassName("translate-dropdown")[0];
+      alternator % 2 ? dropdownMenu.style.display = "grid" : dropdownMenu.style.display = "none";
+      alternator += 1
+    });
+
+    inputWrap.appendChild(textInput);
+    inputWrap.appendChild(translateDiv);
+    inputWrap.appendChild(liveChatDiv);
     inputText.addEventListener("keypress", function(e) {
       // register user input
       if (e.keyCode == 13) {
@@ -110,6 +156,8 @@ function Bubbles(container, self, options) {
     bubbleWrap.style.paddingBottom = "100px"
     inputText.focus()
   }
+
+  
 
   inputCallbackFn ? this.typeInput(inputCallbackFn) : false
 

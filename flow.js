@@ -6,6 +6,10 @@ Notes
   - find and fix older ones
 - create function to check if every object has at least 1 reference somewhere
 - Contextual back button mechanism, specifically for "Accepted flight identification"
+
+
+"<a target=\"_blank\" rel=\"noopener noreferrer\" href=link>Title</a>"
+
 */
 
 
@@ -23,11 +27,11 @@ var flow = {
       },
       {
         question: "Real ID",
-        answer: "real-id"
+        answer: "real-id-start"
       },
       {
         question: "Driver License/Identification (ID) Card",
-        answer: "dl-id-card"
+        answer: "dl-identification-card"
       }
     ]
   },
@@ -35,7 +39,7 @@ var flow = {
   /* Online Services */
   // link
   "online-services": {
-    says: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://stackoverflow.com/questions/18128504/adding-hyperlink-to-text-in-jquery>This is a test</a>"],
+    says: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.dmv.ca.gov/portal/dmv-online/>This is a test</a>"],
     reply: [
       {
         question: "Start",
@@ -62,6 +66,16 @@ var flow = {
       },
       {
         question: "Back",
+        answer: "start"
+      }
+    ]
+  },
+
+  "get-real-id": {
+    says: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/real-id/>Get a REAL ID (link)</a>"],
+    reply:  [
+      {
+        question: "Start",
         answer: "start"
       }
     ]
@@ -177,7 +191,7 @@ var flow = {
     reply: [
       {
         question: "Driver License Extension FAQs",
-        answer: "dl-extension-faqs"
+        answer: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.dmv.ca.gov/portal/covid-19-relief-information/driver-license-extensions/>Title</a>"]
       },
       {
         question: "Driver License/ID Card Renewal",

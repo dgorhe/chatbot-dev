@@ -8,11 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- stylesheets are conveniently separated into components -->
-	<link rel="stylesheet" media="all" href="../component/styles/setup.css">
-	<link rel="stylesheet" media="all" href="../component/styles/says.css">
-	<link rel="stylesheet" media="all" href="../component/styles/reply.css">
-	<link rel="stylesheet" media="all" href="../component/styles/typing.css">
-	<link rel="stylesheet" media="all" href="../component/styles/input.css">
+	<link rel="stylesheet" media="all" href="./component/styles/setup.css">
+	<link rel="stylesheet" media="all" href="./component/styles/says.css">
+	<link rel="stylesheet" media="all" href="./component/styles/reply.css">
+	<link rel="stylesheet" media="all" href="./component/styles/typing.css">
+	<link rel="stylesheet" media="all" href="./component/styles/input.css">
 	<style>
 	body {
 		background: #dcdde0;
@@ -32,7 +32,7 @@
 <div id="chat"></div>
 
 <!-- import the JavaScript file -->
-<script src="../component/Bubbles.js"></script>
+<script src="./component/Bubbles.js"></script>
 
 <!-- import the JSON file -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -76,13 +76,15 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
     }
 
     // Dynamically generating non-nested topics
-    var topics = {};
-    for (var [key, value] of Object.entries(flow)) {
-      topics[key] = key.trim().split("-").map(word => word.toLowerCase());
-    }
+    // var topics = {};
+    // for (var [key, value] of Object.entries(flow)) {
+    //   topics[key] = key.trim().split("-").map(word => word.toLowerCase());
+    // }
 
-    var topic = findShallowTopic(o.input, topics);
-    match(topic);
+
+    var t = findNestedTopic(o.input, topics);
+
+    (t=="something-went-wrong") ? miss() : match(t);
 
   } // end of inputCallbackFn
 

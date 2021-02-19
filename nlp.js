@@ -30,7 +30,7 @@ topics = {
         ["why", "is", "it", "called", "real", "id"]
     ],
     "real-id-one-card": [
-        []
+        ["one", "card"]
     ],
     "domestic-flight": [
         ["what", "counts", "as", "domestic"],
@@ -65,9 +65,9 @@ topics = {
     ],
     "request-records": [
         ["driver", "record"],
-        ["driver", "records"]
-        ["vehicle", "record"]
-        ["vehicle", "records"]
+        ["driver", "records"],
+        ["vehicle", "record"],
+        ["vehicle", "records"],
     ],
     "new-card": [
         ["new", "card", "when", "my", "address", "changes"]
@@ -82,14 +82,14 @@ topics = {
         ["stolen", "card"],
         ["damaged", "license"],
         ["damaged", "id"],
-        ["damaged", "card"]
+        ["damaged", "card"],
         ["broken"]
     ],
     "name-changes": [
         ["changing", "name"],
         ["changing", "names"],
         ["altering", "name"],
-        ["name", "change"]
+        ["name", "change"],
     ],
     "electronic-dl-application": [
         ["online", "id", "application"],
@@ -139,11 +139,6 @@ topics = {
         ["social", "security"],
     ],
     "dl-status":[
-    "dl-status":[
-    "dl-status":[
-    "dl-status":[
-    "dl-status":[
-    "dl-status":[
         ["driver", "license", "status"],
         ["driver's", "license", "status"],
         ["drivers", "license", "status"],
@@ -154,8 +149,8 @@ topics = {
         ["status", "of", "my", "driver's", "license"],
         ["status", "of", "my", "drivers", "license"],
     ],
-
 }
+
 
 if (Array.prototype.equals) {
     console.warn("You're overriding the existing Array.prototype.equals");
@@ -193,6 +188,15 @@ Array.prototype.equals = function(array) {
     return true;
 }
 
+function isIterable(obj) {
+    if (obj == null) {
+        return false;
+    } 
+
+    return typeof obj[Symbol.iterator] === 'function';
+}
+
+
 /** Find the topic of that the initial message relates to. 
  * This should only be used for initial topic or if bot prompts for rephrasing
  * @param {string} text - The message that needs to be inspected for topic match.
@@ -200,29 +204,61 @@ Array.prototype.equals = function(array) {
  * 
  * @return {string} subject - The topic of the user's chat message
  */
-let findNestedTopic = function(text, topics) {
-    text = text.trim().split(" ").map(word => word.toLowerCase());
-
-
-    for (let [topic, variants] of Object.entries(topics)) {
-        if (!Array.isArray(variants[0])) {
-            if (text.includes(...variants)) {
-                return topic;
-            }
-        } 
-        else {
-            for (let variant of variants) {
-                if (text.includes(...variant)) {
-                    return topic;
+let findNestedTopic = (text, topics) => {
+    let result = null; // may need to put in global scope
+    $.get({
+        'async': false,
+        'url':"http://127.0.0.1:5000/segment/",
+        'global': false,
+        'data': {word: text},
+        'type': "GET",
+        'success': function(text) {
+            text = text.trim().split(" ").map(word => word.toLowerCase());
+            let potentialTopics = [];
+        
+            for (let [topic, variants] of Object.entries(topics)) {
+                if (!Array.isArray(variants[0])) {
+                    if (text.includes(...variants)) {
+                        potentialTopics.push(topic);
+                    }
+                } 
+                else {
+                    try {
+                        for (let variant of variants) {
+                            if (isIterable(variant)) {
+                                if (text.includes(...variant)) {
+                                    potentialTopics.push(topic);
+                                }
+                            } else {
+                                if (text.includes(variant)) {
+                                    potentialTopics.push(topic);
+                                }
+                            }
+                        }
+                    } catch (err) {
+                        console.log(err);
+                    }
+                    
                 }
             }
-
-        return "topic-not-found";
+            // finding number of words in each potential topic
+            potentialTopics.map(topic => [topic, topic.length]);
+            let len = 0; // holds largest length
+            let idx = 0; // index at which largest length occurs
+            
+        
+            // iterating through to find largest length at index idx
+            for (let i=0; i<potentialTopics.length; i++ ) {
+                if (potentialTopics[i][1] > len) {
+                    len = potentialTopics[i][1];
+                    idx = i;
+                } 
+            }
+            result = (potentialTopics.length == 0) ? miss() : potentialTopics[idx];
         }
-    }
-    
-    return "something-went-wrong";
-}
+    });
+    return result;
+};
 
 // Simple function to find the topic of conversation
 let findShallowTopic = function(text, topics) {
@@ -233,8 +269,6 @@ let findShallowTopic = function(text, topics) {
             return key;
         }        
     }
-
-    console.log(topics);
-    console.log(text);
+    
     return "something-went-wrong";
 }
