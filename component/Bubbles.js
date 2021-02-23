@@ -86,7 +86,6 @@ function Bubbles(container, self, options) {
     var translateButton = document.createElement("button");
     var liveChatButton = document.createElement("button");
     var inputText = document.createElement("textarea");
-
     
     liveChatDiv.appendChild(liveChatButton);
     textInput.appendChild(inputText);
