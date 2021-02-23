@@ -5,7 +5,7 @@
 
 ## To-do List
 - ~~Complete flow.js with all questions from original Miles~~
-- Add hyperlinks for appropriate buttons
+- ~~Add hyperlinks for appropriate buttons~~ (Figured out how but need to finish adding)
 - ~~Add topics to nlp.js~~
     - ~~Dynamically generate topics object~~
     - ~~Manually create topics object~~
